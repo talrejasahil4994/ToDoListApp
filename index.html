@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="app">
+            <!-- Header with Theme Toggle -->
+            <header class="app-header">
+                <h1>✨ Beautiful To-Do</h1>
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </button>
+            </header>
+
+            <!-- Add Task Section -->
+            <div class="add-task-section">
+                <div class="add-task-container">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="taskInput" 
+                            class="form-control task-input" 
+                            placeholder="What magical task awaits?"
+                            maxlength="200"
+                        >
+                        <div class="input-focus-border"></div>
+                    </div>
+                    <button class="btn btn--primary add-btn" id="addBtn">
+                        <span class="add-icon">✨</span>
+                        Add Task
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="btn filter-btn active" data-filter="all">
+                        <span class="filter-icon">📋</span>
+                        All
+                    </button>
+                    <button class="btn filter-btn" data-filter="active">
+                        <span class="filter-icon">⚡</span>
+                        Active
+                    </button>
+                    <button class="btn filter-btn" data-filter="completed">
+                        <span class="filter-icon">✅</span>
+                        Completed
+                    </button>
+                </div>
+            </div>
+
+            <!-- Task List -->
+            <div class="task-list-container">
+                <div class="task-list-wrapper">
+                    <ul class="task-list" id="taskList">
+                        <!-- Tasks will be dynamically inserted here -->
+                    </ul>
+                    <div class="drop-zone-indicator" id="dropZone"></div>
+                </div>
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">🌟</div>
+                    <h3>Ready to be productive?</h3>
+                    <p>Add your first task above and let's get started!</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="app-footer">
+                <div class="footer-content">
+                    <div class="task-stats">
+                        <span class="task-counter" id="taskCounter">0 tasks remaining</span>
+                        <span class="task-progress" id="taskProgress"></span>
+                    </div>
+                    <button class="btn btn--outline btn--sm clear-completed-btn" id="clearCompletedBtn">
+                        <span class="clear-icon">🗑️</span>
+                        Clear Completed
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
